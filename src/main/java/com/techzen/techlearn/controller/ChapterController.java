@@ -17,10 +17,11 @@ import java.util.UUID;
 @RestController
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-@RequestMapping("/api/v1/Chapter")
+@RequestMapping("/api/v1")
 public class ChapterController {
     CourseService courseService;
-    @GetMapping
+
+    @GetMapping("Chapters")
     public ResponseData<?> getChapterByIdCourse(@RequestParam Long idCourse){
 
         return ResponseData.builder()

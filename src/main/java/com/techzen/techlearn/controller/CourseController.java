@@ -17,12 +17,12 @@ import java.util.UUID;
 @RestController
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-@RequestMapping("/api/v1/Course")
+@RequestMapping("api/v1")
 public class CourseController {
 
     CourseService courseService;
 
-    @GetMapping()
+    @GetMapping("Courses")
     public ResponseData<?> getCourseByUser(@RequestParam(required = false, defaultValue = "1") int page,
                                            @RequestParam(required = false, defaultValue = "10") int pageSize,
                                            @RequestParam String id){

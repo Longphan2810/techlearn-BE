@@ -1,5 +1,6 @@
 CREATE TABLE tbl_user_course
 (
+
     id_course BIGINT NOT NULL,
     id_user   BINARY(16) NOT NULL
 );

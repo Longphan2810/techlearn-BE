@@ -32,6 +32,9 @@ public class ChapterEntity extends BaseEntity {
     @JsonIgnore
     private CourseEntity course;
 
+    @OneToMany( mappedBy = "chapter")
+    private List<AssignmentEntity> assignments;
+
     @Column(name = "is_deleted")
     private Boolean isDeleted;
 }

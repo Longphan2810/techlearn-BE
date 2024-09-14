@@ -5,6 +5,8 @@ import com.techzen.techlearn.dto.response.PageResponse;
 import com.techzen.techlearn.dto.response.SubmittionResponseDTO;
 import com.techzen.techlearn.entity.CourseEntity;
 import com.techzen.techlearn.entity.SubmitionEntity;
+import com.techzen.techlearn.enums.ErrorCode;
+import com.techzen.techlearn.exception.AppException;
 import com.techzen.techlearn.mapper.CourseMapper;
 import com.techzen.techlearn.repository.CourseRepository;
 import com.techzen.techlearn.service.CourseService;
@@ -50,7 +52,7 @@ public class CourseServiceImpl implements CourseService {
         return courseMapper
                 .toCourseResponseDTO(courseRepository
                         .findById(idCourse)
-                        .orElseThrow(()->new RuntimeException(" COURSE_NOT_FOUND")));
+                        .orElseThrow(()->new AppException(ErrorCode.COURSE_NOT_FOUND)));
     }
 
 }
