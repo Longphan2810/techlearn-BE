@@ -1,6 +1,7 @@
 package com.techzen.techlearn.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,6 +15,6 @@ import lombok.experimental.FieldDefaults;
 public class UserRequestDTO {
     @NotBlank(message = "FULL_NAME_INVALID")
     String fullName;
-    @NotBlank(message = "age not blank")
-    String age;
+    @NotNull(message = "AGE_NOT_NULL")
+    Integer age;
 }
